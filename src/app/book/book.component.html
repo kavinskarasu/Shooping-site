@@ -1,0 +1,11 @@
+<li>
+  <p class="no">{{ i + 1 }}</p>
+
+  <img [src]="book.image" [alt]="book.name" width="100" />
+  <p class="tilte">
+    {{ book.name | titlecase }} by {{ book.author | titlecase }}
+  </p>
+
+  <p class="currency">{{ book.price | currency: "INR" }}</p>
+  <button>Add to Cart</button>
+</li>
