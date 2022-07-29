@@ -11,13 +11,18 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class BookComponent implements OnInit {
   @Input() book: Book = {} as Book;
-
+  isInCart: Boolean = false;
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {}
 
   addToCart() {
+    this.isInCart = true;
     console.log(this.book);
     this.cartService.add(this.book);
+  }
+  removeFromCart() {
+    this.isInCart = false;
+    this.cartService.remove(this.book);
   }
 }

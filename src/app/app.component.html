@@ -1,1 +1,33 @@
-<app-books></app-books> <app-cart></app-cart>
+<nav class="flex justify-between p-4 bg-purple-900 text-white">
+  <div>
+    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page"
+      >Book Shop</a
+    >
+  </div>
+  <div>
+    <a
+      class="mx-4"
+      routerLink="/cart"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >My Cart</a
+    >
+    <a
+      class="mx-4"
+      routerLink="/login"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Login</a
+    >
+    <a
+      class="mx-4"
+      routerLink="/register"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Register</a
+    >
+  </div>
+</nav>
+<div class="p-4">
+  <router-outlet></router-outlet>
+</div>

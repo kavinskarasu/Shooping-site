@@ -14,4 +14,9 @@ export class CartService {
   get() {
     return this.cart;
   }
+  remove(book: Book) {
+    this.cart.forEach((value, index) => {
+      if (value == book) this.cart.splice(index, 1);
+    });
+  }
 }
