@@ -16,7 +16,5 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   email: string = '';
 
-  submit() {
-    alert(this.form);
-  }
+  submit() {}
 }
