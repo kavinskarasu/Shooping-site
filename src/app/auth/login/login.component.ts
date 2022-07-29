@@ -15,8 +15,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
   email: string = '';
+  isLoading: Boolean = false;
 
   submit() {
+    if (this.isLoading == true) return;
+    this.isLoading = true;
     const auth = getAuth();
     signInWithEmailAndPassword(auth, this.form.email, this.form.password)
       .then((userCredential) => {
@@ -28,6 +31,9 @@ export class LoginComponent implements OnInit {
         const errorCode = error.code;
         const errorMessage = error.message;
         alert('Credentials does not match our records');
+      })
+      .finally(() => {
+        this.isLoading = false;
       });
   }
 }
