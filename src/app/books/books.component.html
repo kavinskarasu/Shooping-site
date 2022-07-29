@@ -7,7 +7,7 @@
 <input type="text" ng-model="name3" />
 <p>{{ name3 }}</p>
 <ul *ngIf="isShowing">
-  <ng-container *ngFor="let book of books; let i = index">
-    <app-book></app-book>
+  <ng-container *ngFor="let singleBook of books; let i = index">
+    <app-book [book]="singleBook"></app-book>
   </ng-container>
 </ul>
