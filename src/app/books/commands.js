@@ -9,9 +9,25 @@ Buit in structural directives
 
 
 
+// life cycle components
+
+
+ngOnChanges()
+
+ngOnInit();
+
+
+ngDoCheck();
+ngAfterContentInit();
+ngAfterContentChecked();
+ngAfterViewInit();
+ngAfterVIewChecked();
+ngOnDestroy();
 
 
 
+
+service
 
 
 
