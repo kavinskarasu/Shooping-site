@@ -15,8 +15,28 @@ export class BooksComponent implements OnInit {
   author2: string = 'Rachelle Doorley';
   src2: string =
     'https://m.media-amazon.com/images/P/1611806682.01._SCLZZZZZZZ_SX500_.jpg';
-  isShowing: boolean = false;
+  isShowing: boolean = true;
+  name3: string = '';
   constructor() {}
 
   ngOnInit(): void {}
+  //event binding
+  // eventhandler() {
+  //   this.isShowing = true;
+  // }
+
+  /*
+it is achived by two way binding 
+  */
+
+  // name3: string = '';
+
+  // handleInput(event: any) {
+  //   this.name3 = event.target.value;
+  // }
+  toggleBooks() {
+    //if isShowing is true make it false
+    //if showing is flase make it true
+    this.isShowing = !this.isShowing;
+  }
 }
