@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterForm } from 'src/app/types/auth';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,36 +13,15 @@ export class RegisterComponent implements OnInit {
     password: '',
     confirmPassword: '',
   };
-  passwordMatched: boolean = true;
 
-  isLoading: Boolean = false;
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   submit() {
-    if (this.isLoading == true) {
-      return;
-    }
-    this.isLoading = true;
-    if (this.form.password != this.form.confirmPassword) {
-      this.passwordMatched = false;
-      return;
-    }
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, this.form.email, this.form.password)
-      .then((userCredential) => {
-        // Signed in
-        console.log(userCredential);
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+    this.authService.register(this.form);
+  }
+  isLoading() {
+    return this.authService.isLoading;
   }
 }

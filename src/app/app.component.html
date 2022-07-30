@@ -5,27 +5,32 @@
     >
   </div>
   <div>
-    <a
-      class="mx-4"
-      routerLink="/cart"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      >My Cart</a
-    >
-    <a
-      class="mx-4"
-      routerLink="/login"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      >Login</a
-    >
-    <a
-      class="mx-4"
-      routerLink="/register"
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      >Register</a
-    >
+    <ng-container *ngIf="!isAuthenticated()">
+      <a
+        class="mx-4"
+        routerLink="/login"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Login</a
+      >
+      <a
+        class="mx-4"
+        routerLink="/register"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Register</a
+      >
+    </ng-container>
+    <ng-container *ngIf="isAuthenticated()">
+      <a
+        class="mx-4"
+        routerLink="/cart"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >My Cart</a
+      >
+      <button (click)="signout()" class="mx-4">Logout</button>
+    </ng-container>
   </div>
 </nav>
 <div class="p-4">

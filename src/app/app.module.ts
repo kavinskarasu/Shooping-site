@@ -12,12 +12,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AuthModule } from './auth/auth/auth.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CartComponent,
-    LoginComponent,
-    RegisterComponent,
-  ],
+  declarations: [AppComponent, CartComponent],
   imports: [BrowserModule, BooksModule, AppRoutingModule, AuthModule],
   bootstrap: [AppComponent],
 })
