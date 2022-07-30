@@ -5,6 +5,7 @@
     >
   </div>
   <div>
+    <a class="mx-4" routerLink="/cart"> My Cart</a>
     <ng-container *ngIf="!isAuthenticated()">
       <a
         class="mx-4"
@@ -22,13 +23,6 @@
       >
     </ng-container>
     <ng-container *ngIf="isAuthenticated()">
-      <a
-        class="mx-4"
-        routerLink="/cart"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        >My Cart</a
-      >
       <button (click)="signout()" class="mx-4">Logout</button>
     </ng-container>
   </div>
